@@ -2,22 +2,30 @@ extends layout
 
 block content
   h1  Give feedback
+  unless errors
+    img(src='http://rack.0.mshcdn.com/media/ZgkyMDEzLzA4LzA1L2U1L2NvbGJlcnRyZXBvLjVjNmYxLmdpZgpwCXRodW1iCTg1MHg4NTA-CmUJanBn/5e9fcf0f/764/colbert-report.jpg')
   hr
   form(id='feedback', method='POST', validate)
     .form-group
-      label(for='display') Name
+      label(for='display') Name&nbsp;
+      if errors && errors.username
+        span(class='msg')= errors.username.msg
       input(type='text', name='username', class='form-control',
-      id='username', placeholder='Enter your name',
+      id='username', placeholder='Enter your name', value="#{values.username}",
       required, data-required-msg='Name is required')
     .form-group
-      label(for='email') Email
+      label(for='email') Email&nbsp;
+      if errors && errors.email
+        span(class='msg')= errors.email.msg
       input(type='email', name='email', class='form-control',
-      id='email', placeholder='Enter email',
+      id='email', placeholder='Enter email', value="#{values.email}",
       required data-required-msg='Email address is required')
     .form-group
-      label(for='display') Message
+      label(for='display') Message&nbsp;
+      if errors && errors.message
+        span(class='msg')= errors.message.msg
       input(type='textarea', name='message', class='form-control',
-      id='message', placeholder='Enter your message',
+      id='message', placeholder='Enter your message', value="#{values.message}",
       required, data-required-msg='Message is required')
     .form-group
       input(type='submit', name='Send', value='Send' class='btn btn-default')
