@@ -1,5 +1,14 @@
 {
   "name": "nodejsform",
+  "author": "Jukka Rautanen <jukka@rautanen.info",
+   "contributors": [{
+       "name": "Sopheak Kong",
+       "email": "sopheak.kong@metropolia.fi"
+   },
+       {
+       "name": "Joonas Meriläinen",
+       "email": "joonas.m.merilainen@metropolia.fi"
+   }],
   "version": "0.0.0",
   "private": true,
   "scripts": {

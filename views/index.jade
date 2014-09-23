@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  h1  Anna palautetta
+  h1  Give feedback
   unless errors
     p gifs
   hr
@@ -35,4 +35,4 @@ block content
 
 
   script
-    var validator = $("#feedback").kendoValidator().data("kendoValidator");
+    var validator = $("#feedback").kendoValidator();

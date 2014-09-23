@@ -28,6 +28,25 @@ router.post('/', function(req, res) {
      res.render('index', { errors: errors, values: values });
    }
 
+
+
 });
+
+function sendmail (user, email, message) {
+    var smtpTransport = nodemailer.createTransport('SMTP', {
+        service: 'Gmail',
+        auth: {
+            user: 'nodejsform@gmail.com',
+            pass: 'node112'
+        }
+    });
+
+    var mailOptions = {
+        From: 'nodejsform@gmail.com',
+        To: '',
+        subject: 'Hello '+ user, // Subject line
+        text: message // plaintext body
+    }
+}
 
 module.exports = router;
