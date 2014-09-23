@@ -21,8 +21,6 @@ router.post('/', function(req, res) {
    if( !errors){
      sendFeedback(req.body.username, req.body.email, req.body.message);
 
-     res.render('index', { errors: {} });
-
      values = {
       'username': '',
       'email': '',
