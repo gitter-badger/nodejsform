@@ -1,26 +1,29 @@
 0 info it worked if it ends with ok
 1 verbose cli [ 'node', '/usr/local/bin/npm', 'start' ]
-2 info using npm@1.4.23
-3 info using node@v0.10.31
-4 verbose run-script [ 'prestart', 'start', 'poststart' ]
-5 info prestart nodejsform@0.0.0
-6 info start nodejsform@0.0.0
-7 verbose unsafe-perm in lifecycle true
-8 info nodejsform@0.0.0 Failed to exec start script
-9 error nodejsform@0.0.0 start: `node ./bin/www`
-9 error Exit status 8
-10 error Failed at the nodejsform@0.0.0 start script.
-10 error This is most likely a problem with the nodejsform package,
-10 error not with npm itself.
-10 error Tell the author that this fails on your system:
-10 error     node ./bin/www
-10 error You can get their info via:
-10 error     npm owner ls nodejsform
-10 error There is likely additional logging output above.
-11 error System Darwin 13.3.0
-12 error command "node" "/usr/local/bin/npm" "start"
-13 error cwd /Users/juki/form/nodejsform
-14 error node -v v0.10.31
-15 error npm -v 1.4.23
-16 error code ELIFECYCLE
-17 verbose exit [ 1, true ]
+2 info using npm@2.0.0
+3 info using node@v0.10.32
+4 verbose node symlink /usr/local/bin/node
+5 verbose stack Error: Failed to parse json
+5 verbose stack Unexpected token <
+5 verbose stack     at parseError (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:378:25)
+5 verbose stack     at parseJson (/usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:85:51)
+5 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/read-package-json/read-json.js:59:33
+5 verbose stack     at evalmachine.<anonymous>:271:14
+5 verbose stack     at /usr/local/lib/node_modules/npm/node_modules/graceful-fs/graceful-fs.js:102:5
+5 verbose stack     at Object.oncomplete (evalmachine.<anonymous>:107:15)
+6 verbose cwd /Users/joonas/www/metropolia/TT00CC06-3001/nodejsform
+7 error Darwin 13.3.0
+8 error argv "node" "/usr/local/bin/npm" "start"
+9 error node v0.10.32
+10 error npm  v2.0.0
+11 error file /Users/joonas/www/metropolia/TT00CC06-3001/nodejsform/package.json
+12 error code EJSONPARSE
+13 error Failed to parse json
+13 error Unexpected token <
+14 error File: /Users/joonas/www/metropolia/TT00CC06-3001/nodejsform/package.json
+15 error Failed to parse package.json data.
+15 error package.json must be actual JSON, not just JavaScript.
+15 error
+15 error This is not a bug in npm.
+15 error Tell the package author to fix their package.json file. JSON.parse
+16 verbose exit [ 1, true ]
