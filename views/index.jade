@@ -6,21 +6,21 @@ block content
   form(id='feedback', method='POST', validate)
     .form-group
       label(for='display') Name
-      input(type='text', name='username', class='form-control', 
-      id='username', placeholder='Enter your name', 
+      input(type='text', name='username', class='form-control',
+      id='username', placeholder='Enter your name',
       required, data-required-msg='Name is required')
     .form-group
       label(for='email') Email
-      input(type='email', name='email', class='form-control', 
+      input(type='email', name='email', class='form-control',
       id='email', placeholder='Enter email',
       required data-required-msg='Email address is required')
     .form-group
       label(for='display') Message
-      input(type='textarea', name='message', class='form-control', 
-      id='message', placeholder='Enter your message', 
-      required, data-required-msg='Message is required')    
+      input(type='textarea', name='message', class='form-control',
+      id='message', placeholder='Enter your message',
+      required, data-required-msg='Message is required')
     .form-group
-      input(type='submit', name='Send', value='Send' class='btn btn-default') 
+      input(type='submit', name='Send', value='Send' class='btn btn-default')
 
   script(src='//code.jquery.com/jquery-1.9.1.min.js')
   script(src='//cdn.kendostatic.com/2013.3.1119/js/kendo.all.min.js')
