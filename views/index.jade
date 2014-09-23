@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  h1  Anna palautetta
+  h1  Give feedback
   hr
   form(id='feedback', method='POST', validate)
     .form-group
@@ -27,4 +27,4 @@ block content
 
 
   script
-    var validator = $("#feedback").kendoValidator().data("kendoValidator");
+    var validator = $("#feedback").kendoValidator();
