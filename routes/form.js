@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-router.post('/', function(req, res) {
+var nodemailer = require('nodemailer');
 
-    console.log(req.body.username);
+router.post('/', function(req, res) {
 
   req.assert('username', 'Name is required').len(6, 20);
   req.assert('email', 'A valid email is required').isEmail();
@@ -13,31 +13,43 @@ router.post('/', function(req, res) {
 
    if( !errors){
      console.log(errors);
+
+       sendFeedback(req.body.username, req.body.email, req.body.message);
+
      res.render('index', { errors: {} });
+
    } else {
      console.log(errors);
      res.render('index', { errors: errors });
    }
 
-
-
 });
 
-function sendmail (user, email, message) {
-    var smtpTransport = nodemailer.createTransport('SMTP', {
+function sendFeedback(user, email, message) {
+
+    var transporter  = nodemailer.createTransport({
         service: 'Gmail',
         auth: {
             user: 'nodejsform@gmail.com',
-            pass: 'node112'
+            pass: 'nodejs112'
         }
     });
 
+    // setup e-mail data with unicode symbols
     var mailOptions = {
-        From: 'nodejsform@gmail.com',
-        To: '',
-        subject: 'Hello '+ user, // Subject line
-        text: message // plaintext body
+        from: 'nodejsform@gmail.com',
+        to: 'jukka@rautanen.info, sopheak.kong@metropolia.fi, joonas.m.merilainen@metropolia.fi',
+        subject: 'Message from '+ user, // Subject line
+        text: message + ' '+ email // plaintext body
     }
+
+    // send mail with defined transport object
+    transporter.sendMail(mailOptions, function(error, info) {
+        if(error){
+            console.log(error);
+        }else{
+            console.log('Message sent: ' + info.response);
+        }});
 }
 
 module.exports = router;
